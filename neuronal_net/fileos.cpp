@@ -20,7 +20,7 @@ void FileOS::vec_to_file(vector<vector<vector<double>>> v, vector<int> topology,
     // a stupid solution for stupid people
 
     ofstream myfile;
-    myfile.open (file_dir);
+    myfile.open(file_dir);
     for(int i = 0; i < topology.size(); i++){
         myfile << topology[i] << " ";
     }
@@ -118,4 +118,15 @@ Net FileOS::import_Net(string file_dir){
     my_net.vec_to_weights(weights);
 
     return(my_net);
+}
+
+/*!
+ * @brief saves Neuronal Net in a file
+ *
+ * @param nn Neurnal Net
+ *
+ * @param file_dir file directory
+ */
+void FileOS::Net_to_file(Net net, string file_dir){
+    vec_to_file(net.weights_to_vec(), net.topology, file_dir);
 }

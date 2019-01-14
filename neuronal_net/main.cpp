@@ -5,6 +5,8 @@
 #include "fileos.h"
 
 #include <iostream>
+#include <QDir>
+
 
 using namespace std;
 
@@ -25,13 +27,14 @@ int main(int argc, char *argv[])
 
     Net nn = Net(n_top, *sigmoid0, *dsigmoid0);
 
-    cout << nn.predict(x_in)[1];
-    nn.train(x_in, y_out, 0.2, 0.1);
 
     FileOS fos = FileOS();
 
-    //fos.vec_to_file(nn.weights_to_vec(), nn.topology);
-    Net aasdasfg = fos.import_Net("example.txt");
+
+
+    fos.vec_to_file(nn.weights_to_vec(), nn.topology, "asdasdasd.txt");
+
+    Net aasdasfg = fos.import_Net("asdasdasdss.txt");
 
     return a.exec();
 

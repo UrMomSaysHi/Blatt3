@@ -7,7 +7,6 @@
 #include "net.h"
 #include "utilities.h"
 #include <sstream>
-#include "net.h"
 
 using namespace std;
 
@@ -19,6 +18,7 @@ public:
     vector<vector<vector<double>>> file_to_vec(string file_dir);
     vector<int> get_topology(string file_dir);
     Net import_Net(string file_dir);
+    void Net_to_file(Net net, string file_dir);
 };
 
 
